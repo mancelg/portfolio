@@ -1,10 +1,17 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --primary-color: #004b87; /* Bleu R&T */
-    --secondary-color: #f4f7f6;
-    --text-color: #333;
-    --accent-color: #e05e00;
-    --border-color: #ddd;
+    --primary-color: #0b457a; /* Bleu plus profond et moderne */
+    --secondary-color: #f0f4f8; /* Fond gris bleuté très léger */
+    --text-color: #2d3748;
+    --text-light: #4a5568;
+    --accent-color: #dd6b20; /* Orange dynamique */
+    --accent-hover: #c05621;
+    --border-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --radius: 12px;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -14,10 +21,13 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* En-tête et Navigation */
@@ -27,7 +37,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-md);
 }
 
 nav {
@@ -36,13 +46,13 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 nav ul {
@@ -52,143 +62,226 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: rgba(255,255,255,0.2);
+nav ul li a:hover, nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
 }
 
 /* Conteneur principal */
 main {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    min-height: 70vh;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--card-bg);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius);
+    flex: 1;
+    width: 95%;
 }
 
 /* Typographie */
 h1 {
     color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
     text-align: center;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
 h2 {
     color: var(--primary-color);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
 }
 
 h3 {
     color: var(--text-color);
+    font-size: 1.3rem;
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
 }
 
-p, ul {
-    margin-bottom: 1rem;
+p {
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
 }
 
 ul {
     padding-left: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
 }
 
-/* Blocs spécifiques */
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    color: var(--text-color);
+}
+
+/* Profil */
 .profile-container {
     display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin: 2rem 0;
+    align-items: center; /* Centré verticalement */
+    gap: 4rem; /* Légèrement augmenté pour l'équilibre */
+    margin: 3rem 0 4rem;
 }
 
 .profile-pic {
-    width: 250px;
-    height: 250px;
+    width: 320px; /* Agrandie de 260px à 320px */
+    height: 320px; /* Agrandie pour rester carrée */
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--secondary-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 8px solid var(--secondary-color); /* Bordure légèrement plus épaisse */
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
+.profile-pic:hover {
+    transform: scale(1.02);
+}
+
+.intro-text p {
+    font-size: 1.05rem;
+}
+
+/* Blocs de contenu stylisés */
 .content-block {
-    background-color: #fafafa;
-    padding: 1.5rem;
-    border-left: 4px solid var(--primary-color);
-    margin-bottom: 1.5rem;
-    border-radius: 0 4px 4px 0;
+    background-color: #f8fafc;
+    padding: 1.8rem;
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 2rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-/* Grille pour la page SAÉ */
+/* Grille des Projets */
 .sae-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
     margin-top: 2rem;
 }
 
 .sae-card {
-    background: white;
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sae-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
 }
 
 .sae-card h3 {
     color: var(--primary-color);
     margin-top: 0;
+    font-size: 1.4rem;
 }
 
+/* Boutons */
 .btn {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.8rem;
     background-color: var(--accent-color);
     color: white;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #c04e00;
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    color: white;
 }
 
 /* Pied de page */
 footer {
     text-align: center;
-    padding: 1.5rem;
-    background-color: #222;
-    color: #ddd;
+    padding: 2rem;
+    background-color: #1a202c;
+    color: #a0aec0;
     margin-top: auto;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .intro-text ul {
+        text-align: left; /* Garde la liste lisible sur mobile */
+    }
+    
+    .profile-pic {
+        width: 280px; /* Redimensionnée sur tablette pour ne pas prendre trop de place */
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
     nav {
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
     }
-    .profile-container {
-        flex-direction: column;
-        text-align: center;
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-pic {
+        width: 220px; /* Encore plus petite sur mobile */
+        height: 220px;
     }
 }
