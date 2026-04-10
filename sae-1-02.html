@@ -23,57 +23,55 @@
     <main>
         <a href="projets.html" class="btn-back">Retour aux projets</a>
         
-        <h1>SAÉ 1.02 – Gestion de projet : Se présenter sur Internet</h1>
+        <h1>SAÉ 1.02 – S'initier aux réseaux informatiques</h1>
         
         <section>
             <h2>1. Contexte et Objectifs de la mission</h2>
             <div class="content-block">
-                <p><strong>Contexte professionnel :</strong> Ce projet a été réalisé en groupe de 4 étudiants. Avant de nous lancer dans le développement de notre site web "Se présenter sur Internet", nous devions structurer rigoureusement notre démarche de travail.</p>
-                <p><strong>Mission confiée :</strong> L'objectif était de mettre en place une véritable gestion de projet professionnelle : définir l'arborescence des tâches (WBS), estimer les temps de réalisation dans un planning précis, et suivre l'avancement individuel via une méthode agile (Kanban).</p>
-                <p><strong>Compétences BUT ciblées :</strong> RT3 - Créer des outils et des applications informatiques (focus sur l'organisation et le travail collaboratif).</p>
+                <p><strong>Contexte professionnel :</strong> Ce projet en groupe de 4 étudiants simulait une réponse à un appel d'offres pour la refonte complète de l'infrastructure réseau du bâtiment C de l'IUT Grand Ouest Normandie (site d'Ifs).</p>
+                <p><strong>Mission confiée :</strong> À partir d'un cahier des charges détaillé et de plans architecturaux, nous devions concevoir l'architecture physique et logique du nouveau réseau. Cela incluait le plan d'adressage IP, le choix du matériel (commutateurs, jarretières, rocades), la simulation sur Packet Tracer, et la rédaction d'un devis estimatif.</p>
+                <p><strong>Compétences BUT ciblées :</strong> RT1 - Administrer les réseaux et l'Internet (Coefficient 31).</p>
             </div>
         </section>
 
         <section>
             <h2>2. Apprentissages Critiques (AC) mobilisés</h2>
-            <p>Au cours de cette phase de préparation, j'ai particulièrement mis en œuvre les apprentissages suivants :</p>
+            <p>Au cours de ce projet d'infrastructure, j'ai particulièrement mis en œuvre les apprentissages suivants :</p>
             <ul>
-                <li><strong>AC 13.06 : S'intégrer dans un environnement propice au développement et au travail collaboratif.</strong> <br><em>→ Comment je l'ai mobilisé : En participant à la création du schéma WBS avec mon groupe pour diviser le projet en lots (Conception, Développement, Accessibilité, Déploiement) et en coordonnant nos actions.</em></li>
-                <li><strong>AC 13.01 : Utiliser un système informatique et ses outils.</strong> <br><em>→ Comment je l'ai mobilisé : En utilisant des outils de gestion de projet numériques comme Trello pour assurer le suivi de mes tâches individuelles.</em></li>
-                <li><strong>AC 13.04 : Connaître l'architecture et les technologies d'un site Web.</strong> <br><em>→ Comment je l'ai mobilisé : En anticipant, dès le planning, les phases critiques comme le Responsive Design, la validation W3C et les tests d'accessibilité (WCAG 2.0 AA).</em></li>
+                <li><strong>AC 11.02 : Comprendre l’architecture et les fondements des systèmes numériques.</strong> <br><em>→ Comment je l'ai mobilisé : En réalisant un plan d'adressage IP optimisé (VLSM) pour diviser le réseau en sous-réseaux logiques fonctionnels (VLANs pour l'administration, les salles machines, le WiFi, etc.).</em></li>
+                <li><strong>AC 11.03 : Configurer les fonctions de base du réseau local.</strong> <br><em>→ Comment je l'ai mobilisé : En configurant les VLANs, les trunks (802.1Q) et les adresses IP sur les commutateurs Cisco virtuels dans l'environnement Packet Tracer.</em></li>
             </ul>
         </section>
 
         <section>
             <h2>3. Tâches réalisées et Méthodologie</h2>
-            <p>Pour garantir la réussite de la création du site, nous avons suivi une méthodologie stricte en trois étapes :</p>
+            <p>Le projet s'est déroulé en suivant une démarche d'ingénierie réseau classique[cite: 4]:</p>
             <ul>
-                <li><strong>Étape 1 : Le découpage (Schéma WBS) :</strong> En groupe de 4, nous avons fait un brainstorming pour lister absolument toutes les actions nécessaires, de l'analyse du cahier des charges jusqu'à l'hébergement sur GitHub Pages.</li>
-                <li><strong>Étape 2 : La planification temporelle :</strong> Nous avons attribué des durées à chaque tâche (ex: 4h pour la conception, 10h pour le développement HTML/CSS) et fixé des dates butoirs précises.</li>
-                <li><strong>Étape 3 : Le suivi individuel :</strong> De mon côté, j'ai retranscrit mes responsabilités dans un tableau Trello organisé en colonnes (À faire, En cours, En validation, Terminé) pour ne rien oublier de mes maquettes et de mon code.</li>
+                <li><strong>Analyse des besoins :</strong> Étude du cahier des charges et des plans du bâtiment pour déterminer l'emplacement des baies de brassage (répartiteurs de bâtiment et d'étage) et le nombre de prises RJ45 nécessaires.</li>
+                <li><strong>Conception logique :</strong> Élaboration du plan d'adressage IP (calcul des masques, plages d'adresses, passerelles) et affectation des VLANs.</li>
+                <li><strong>Simulation :</strong> Déploiement virtuel de la topologie sur Cisco Packet Tracer pour valider la communication entre les différents équipements.</li>
+                <li><strong>Choix technologiques :</strong> Sélection du matériel actif (Switchs Cisco Catalyst) et passif (câbles fibres optiques, rocades cuivres) avec établissement d'un budget[cite: 5].</li>
             </ul>
         </section>
 
         <section>
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
-                <h3>Trace 1 : Le Schéma WBS et le Planning du groupe</h3>
-                <p><strong>Description :</strong> Ci-dessous, la décomposition de notre projet et l'estimation temporelle des tâches.</p>
+                <h3>Trace 1 : Architecture logique sous Cisco Packet Tracer</h3>
+                <p><strong>Description :</strong> Schéma topologique réalisé sur Packet Tracer montrant l'interconnexion des commutateurs (distribution et accès) avec la configuration des différents VLANs.</p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
-                    <img src="Shéma WBS.png" alt="Schéma WBS du projet" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-                    <br>
-                    <img src="Planning.png" alt="Planning du projet" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="2476-1693-max.png" alt="Topologie logique Packet Tracer" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 </div>
-                <p><strong>Justification du choix :</strong> Ces traces prouvent notre capacité à anticiper les contraintes techniques d'un projet web. On y voit clairement que nous avons pensé aux détails importants comme le versioning Git, l'accessibilité ARIA et la conformité W3C avant même d'écrire la première ligne de code.</p>
+                <p><strong>Justification du choix :</strong> Cette trace prouve ma capacité à traduire un besoin théorique en une infrastructure réseau fonctionnelle (AC 11.03). Elle démontre la maîtrise des concepts de segmentation réseau (VLAN) et de liens agrégés (Trunk).</p>
                 
                 <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
 
-                <h3>Trace 2 : Mon tableau Kanban (Trello)</h3>
-                <p><strong>Description :</strong> Suivi de mes tâches individuelles pour la réalisation du projet.</p>
+                <h3>Trace 2 : Implantation physique sur plan (Baies de brassage)</h3>
+                <p><strong>Description :</strong> Plan architectural du bâtiment annoté avec l'emplacement stratégique des sous-répartiteurs et le tracé des rocades (cuivre et fibre optique).</p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-                    <img src="trello.png" alt="Tableau Kanban Trello" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="752-1075-max.png" alt="Plan d'implantation des baies de brassage" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 </div>
-                <p><strong>Justification du choix :</strong> J'ai choisi cette capture d'écran car elle démontre mon autonomie et mon organisation personnelle. La liste "Terminé" prouve que j'ai respecté mes engagements sur les maquettes, le code des pages et le déploiement sur GitHub.</p>
+                <p><strong>Justification du choix :</strong> J'ai choisi cette image car elle illustre la dimension matérielle et physique du métier d'administrateur réseau. Elle prouve ma capacité à concevoir un câblage structuré en respectant les contraintes de distance (100m max pour le cuivre) et d'organisation spatiale d'un bâtiment.</p>
             </div>
         </section>
 
@@ -81,13 +79,13 @@
             <h2>5. Autoévaluation et Démarche Réflexive</h2>
             <div class="content-block">
                 <h3>Difficultés rencontrées & Solutions apportées</h3>
-                <p>La principale difficulté a été d'estimer correctement le temps nécessaire pour la phase de développement (10h prévues) et de se coordonner à 4 sans se marcher sur les pieds. Pour éviter le chaos, la solution a été de nous appuyer sur notre schéma WBS pour diviser clairement les pages à coder, et d'utiliser GitHub pour fusionner notre travail sans conflits.</p>
+                <p>La principale difficulté de ce projet a été la réalisation du plan d'adressage VLSM (Variable Length Subnet Mask). Au départ, notre découpage entraînait un gaspillage d'adresses IP sur certains sous-réseaux. Pour résoudre ce problème, j'ai repris les calculs binaires avec mon groupe en commençant par les VLANs nécessitant le plus grand nombre d'hôtes pour optimiser la plage d'adresses globale.</p>
                 
                 <h3>Prise de recul (Bilan)</h3>
-                <p>Cette SAÉ m'a appris qu'un projet informatique n'est pas seulement du "code pur". J'ai réalisé qu'une bonne heure passée à planifier (choix des couleurs, maquettage, découpage des tâches) permet de gagner des dizaines d'heures lors du développement. Le fait d'avoir coché les cartes Trello au fur et à mesure était aussi très motivant pour avancer.</p>
+                <p>Cette SAÉ m'a permis de comprendre qu'un réseau informatique performant ne se résume pas à la configuration de routeurs. La phase d'ingénierie préliminaire (analyse des plans, choix des fibres multimodes/monomodes pour les rocades, chiffrage budgétaire) est tout aussi cruciale. J'ai également apprécié l'utilisation de Packet Tracer pour valider nos hypothèses théoriques par la simulation.</p>
                 
                 <h3>Capacité d'adaptation</h3>
-                <p>La méthode de découpage fonctionnel (WBS) et la logique Agile/Kanban (Trello) sont des standards de l'industrie. Je pourrai réutiliser exactement la même méthodologie pour structurer le déploiement d'une infrastructure réseau complexe ou pour organiser le travail d'une équipe lors d'un futur audit de cybersécurité.</p>
+                <p>La méthodologie appliquée ici (analyse des besoins, adressage, simulation, déploiement) est la base de tout projet d'infrastructure. Que ce soit pour une PME ou un campus universitaire complet, je suis désormais capable de structurer un réseau local de A à Z. Dans la perspective de mon parcours en Cybersécurité, avoir conçu cette architecture me permet de mieux comprendre comment un attaquant pourrait l'infiltrer (par exemple via des sauts de VLAN) et comment la protéger.</p>
             </div>
         </section>
     </main>
