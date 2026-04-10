@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 1.03 - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Portfolio R&T</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation pro</a></li>
+                <li><a href="projets.html" class="active">Mes Projets</a></li>
+                <li><a href="bilans.html">Bilans par compétence</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="projets.html" class="btn-back">Retour aux projets</a>
+        
+        <h1>SAÉ 1.03 – Découvrir un dispositif de transmission</h1>
+        
+        <section>
+            <h2>1. Contexte et Objectifs de la mission</h2>
+            <div class="content-block">
+                <p><strong>Contexte professionnel :</strong> En entreprise, un technicien ou administrateur réseau utilise souvent un "certificateur" qui effectue des mesures de câbles de façon automatique. Dans cette SAÉ, nous devions nous passer de cet automatisme pour comprendre physiquement comment s'effectuent ces mesures sur le cuivre et la fibre optique.</p>
+                <p><strong>Mission confiée :</strong> L'objectif était de caractériser deux supports de transmission. Pour le cuivre, nous devions déterminer la longueur d'un câble ou la distance d'un défaut (DTF). Pour la fibre optique (FTTH), nous devions mesurer l'atténuation globale du signal. Le tout devait être documenté dans deux rapports de mesures professionnels.</p>
+                <p><strong>Compétences BUT ciblées :</strong> RT2 - Connecter les entreprises et les usagers.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Apprentissages Critiques (AC) mobilisés</h2>
+            <p>Au cours de ce projet, j'ai particulièrement mis en œuvre les apprentissages suivants :</p>
+            <ul>
+                <li><strong>AC 12.01 : Mesurer et analyser les signaux.</strong> <br><em>→ Comment je l'ai mobilisé : En utilisant un analyseur de spectre, un GBF et un oscilloscope pour observer le temps de parcours d'une impulsion et calculer la vitesse nominale de propagation (NVP) des ondes dans un câble cuivre.</em></li>
+                <li><strong>AC 12.03 : Déployer des supports de transmission.</strong> <br><em>→ Comment je l'ai mobilisé : En réalisant le câblage d'une liaison en fibre optique FTTH et en manipulant des jarretières optiques avec précaution avant d'en tester l'atténuation.</em></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Tâches réalisées et Méthodologie</h2>
+            <p>Le projet s'est divisé en deux grandes phases de manipulation en laboratoire :</p>
+            <ul>
+                <li><strong>Phase 1 - Réflectométrie sur Cuivre :</strong> J'ai utilisé un câble étalon pour calculer la NVP (Vitesse Nominale de Propagation) d'un câble Ethernet. Ensuite, à l'aide d'un analyseur de spectre (fonction DTF - Distance to Fault) et d'un oscilloscope en régime impulsionnel, j'ai mesuré la longueur d'un câble coaxial RG58 et repéré un défaut physique.</li>
+                <li><strong>Phase 2 - Photométrie sur Fibre Optique :</strong> J'ai mis en place une liaison fibre optique. À l'aide d'une source lumineuse (OLS) et d'un mesureur de puissance (OLP), j'ai injecté un signal et relevé la puissance à la sortie pour calculer la perte d'insertion (atténuation globale en dB) de la liaison.</li>
+                <li><strong>Phase 3 - Rédaction :</strong> J'ai compilé les données dans deux rapports de mesures A4 synthétiques.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Preuves et Traces de réalisation</h2>
+            <div class="content-block">
+                <h3>Trace 1 : Mesure de Réflectométrie (DTF) sur câble cuivre</h3>
+                <p><strong>Description :</strong> Analyseur vectoriel de réseau (Siglent) affichant la courbe de Distance To Fault (DTF).</p>
+                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+                    <img src="photo2-sae-13.jpg" alt="Mesure DTF sur analyseur Siglent" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                </div>
+                <p><strong>Justification du choix :</strong> J'ai choisi cette photographie car elle illustre parfaitement l'AC 12.01 (Mesurer et analyser les signaux). On y voit le paramétrage de l'appareil (Velocity Factor réglé) et l'analyse du pic d'atténuation qui permet de déduire avec précision la longueur ou l'emplacement de la coupure du câble (ici 3.56m).</p>
+                
+                <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
+
+                <h3>Trace 2 : Mesure de Photométrie sur liaison Fibre Optique</h3>
+                <p><strong>Description :</strong> Équipements Viavi (Source OLS-35 et Photomètre OLP-35) connectés de part et d'autre d'une installation fibre pour mesurer l'atténuation.</p>
+                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+                    <img src="photo-sae-13.jpg" alt="Mesure de photométrie sur fibre optique" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                </div>
+                <p><strong>Justification du choix :</strong> Cette trace démontre ma capacité à déployer et qualifier un support de transmission moderne (AC 12.03). La manipulation de ces équipements professionnels prouve que je sais comment vérifier la viabilité d'un raccordement FTTH.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Autoévaluation et Démarche Réflexive</h2>
+            <div class="content-block">
+                <h3>Difficultés rencontrées & Solutions apportées</h3>
+                <p>La plus grande difficulté a été de configurer manuellement l'analyseur de spectre pour le cuivre, car un mauvais réglage de la NVP fausse totalement la mesure de distance finale. Pour résoudre ce problème, je me suis appuyé sur les méthodes de calcul vues en TD : j'ai d'abord testé mon protocole sur un câble étalon de 2 mètres dont je connaissais les propriétés pour calibrer correctement mes formules avant de les appliquer au câble inconnu.</p>
+                
+                <h3>Prise de recul (Bilan)</h3>
+                <p>Cette SAÉ a complètement changé ma vision du matériel réseau. Avant, je voyais un câble simplement comme un élément que l'on branche. Désormais, je comprends les phénomènes physiques sous-jacents (atténuation, réflexion des ondes, perte d'insertion) et comment un signal se dégrade sur la distance. C'est une compétence fondamentale pour le diagnostic de pannes (troubleshooting).</p>
+                
+                <h3>Capacité d'adaptation</h3>
+                <p>Les protocoles de tests (réflectométrie et photométrie) abordés ici sont les standards du marché. Si demain je dois intervenir sur une panne de réseau local d'entreprise ou chez un opérateur de télécommunications pour vérifier la qualité d'une ligne fibre optique fraîchement soudée, je serai parfaitement capable d'interpréter les résultats de mesure.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Portfolio de Gabriel Mancel - BUT R&T</p>
+    </footer>
+
+</body>
+</html>
