@@ -47,8 +47,8 @@
             <h2>3. Tâches réalisées et Méthodologie</h2>
             <p>Le projet s'est divisé en deux grandes phases de manipulation en laboratoire :</p>
             <ul>
-                <li><strong>Phase 1 - Réflectométrie sur Cuivre :</strong> J'ai utilisé un câble étalon pour calculer la NVP (Vitesse Nominale de Propagation) d'un câble Ethernet. Ensuite, à l'aide d'un analyseur de spectre (fonction DTF - Distance to Fault) et d'un oscilloscope en régime impulsionnel, j'ai mesuré la longueur d'un câble coaxial RG58 et repéré un défaut physique.</li>
-                <li><strong>Phase 2 - Photométrie sur Fibre Optique :</strong> J'ai mis en place une liaison fibre optique. À l'aide d'une source lumineuse (OLS) et d'un mesureur de puissance (OLP), j'ai injecté un signal et relevé la puissance à la sortie pour calculer la perte d'insertion (atténuation globale en dB) de la liaison.</li>
+                <li><strong>Phase 1 - Réflectométrie sur Cuivre :</strong> J'ai utilisé un câble étalon pour calculer la NVP (Vitesse Nominale de Propagation) d'un câble Ethernet. Ensuite, à l'aide d'un analyseur de spectre (fonction DTF - Distance to Fault) et d'un oscilloscope en régime impulsionnel, j'ai mesuré la longueur d'un câble coaxial RG58 et repéré un défaut physique <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>.</li>
+                <li><strong>Phase 2 - Photométrie sur Fibre Optique :</strong> J'ai mis en place une liaison fibre optique. À l'aide d'une source lumineuse (OLS) et d'un mesureur de puissance (OLP), j'ai injecté un signal et relevé la puissance à la sortie pour calculer la perte d'insertion (atténuation globale en dB) de la liaison <strong>(<a href="#trace2" style="color: var(--primary-color); text-decoration: underline;">Trace 2</a>)</strong>.</li>
                 <li><strong>Phase 3 - Rédaction :</strong> J'ai compilé les données dans deux rapports de mesures A4 synthétiques.</li>
             </ul>
         </section>
@@ -56,16 +56,16 @@
         <section>
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
-                <h3>Trace 1 : Mesure de Réflectométrie (DTF) sur câble cuivre</h3>
+                <h3 id="trace1">Trace 1 : Mesure de Réflectométrie (DTF) sur câble cuivre</h3>
                 <p><strong>Description :</strong> Analyseur vectoriel de réseau (Siglent) affichant la courbe de Distance To Fault (DTF).</p>
-                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
                     <img src="photo2-sae-13.jpg" alt="Mesure DTF sur analyseur Siglent" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 </div>
                 <p><strong>Justification du choix :</strong> J'ai choisi cette photographie car elle illustre parfaitement l'AC 12.01 (Mesurer et analyser les signaux). On y voit le paramétrage de l'appareil (Velocity Factor réglé) et l'analyse du pic d'atténuation qui permet de déduire avec précision la longueur ou l'emplacement de la coupure du câble (ici 3.56m).</p>
                 
                 <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
 
-                <h3>Trace 2 : Mesure de Photométrie sur liaison Fibre Optique</h3>
+                <h3 id="trace2">Trace 2 : Mesure de Photométrie sur liaison Fibre Optique</h3>
                 <p><strong>Description :</strong> Équipements Viavi (Source OLS-35 et Photomètre OLP-35) connectés de part et d'autre d'une installation fibre pour mesurer l'atténuation.</p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
                     <img src="photo-sae-13.jpg" alt="Mesure de photométrie sur fibre optique" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">

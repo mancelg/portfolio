@@ -45,19 +45,19 @@
 
         <section>
             <h2>3. Tâches réalisées et Méthodologie</h2>
-            <p>Le projet s'est déroulé en suivant une démarche d'ingénierie réseau classique:</p>
+            <p>Le projet s'est déroulé en suivant plusieurs étapes précises :</p>
             <ul>
-                <li><strong>Analyse des besoins :</strong> Étude du cahier des charges et des plans du bâtiment pour déterminer l'emplacement des baies de brassage (répartiteurs de bâtiment et d'étage) et le nombre de prises RJ45 nécessaires.</li>
-                <li><strong>Conception logique :</strong> Élaboration du plan d'adressage IP (calcul des masques, plages d'adresses, passerelles) et affectation des VLANs.</li>
-                <li><strong>Simulation :</strong> Déploiement virtuel de la topologie sur Cisco Packet Tracer pour valider la communication entre les différents équipements.</li>
-                <li><strong>Choix technologiques :</strong> Sélection du matériel actif (Switchs Cisco Catalyst) et passif (câbles fibres optiques, rocades cuivres) avec établissement d'un budget.</li>
+                <li><strong>Analyse des besoins et étude des plans :</strong> Nous avons étudié le cahier des charges et les plans architecturaux du bâtiment pour choisir l'emplacement des baies de brassage et compter les prises nécessaires, ce qui a permis de valider notre plan d'implantation physique <strong>(<a href="#trace2" style="color: var(--primary-color); text-decoration: underline;">Trace 2</a>)</strong>.</li>
+                <li><strong>Conception logique :</strong> Nous avons calculé le plan d'adressage IP avec la méthode VLSM pour diviser correctement nos sous-réseaux et organiser nos différents VLANs.</li>
+                <li><strong>Simulation du réseau :</strong> Nous avons déployé et configuré virtuellement toute notre topologie sur le logiciel Cisco Packet Tracer pour vérifier que la communication fonctionnait bien entre tous les équipements, comme le montre notre schéma logique <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>.</li>
+                <li><strong>Choix technologiques :</strong> Nous avons sélectionné le matériel actif (commutateurs Cisco Catalyst) et passif adapté à nos besoins, puis nous avons établi le devis budgétaire final.</li>
             </ul>
         </section>
 
         <section>
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
-                <h3>Trace 1 : Architecture logique sous Cisco Packet Tracer</h3>
+                <h3 id="trace1">Trace 1 : Architecture logique sous Cisco Packet Tracer</h3>
                 <p><strong>Description :</strong> Schéma topologique réalisé sur Packet Tracer montrant l'interconnexion des commutateurs (distribution et accès) avec la configuration des différents VLANs.</p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
                     <img src="2476-1693-max.png" alt="Topologie logique Packet Tracer" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -66,7 +66,7 @@
                 
                 <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
 
-                <h3>Trace 2 : Implantation physique sur plan (Baies de brassage)</h3>
+                <h3 id="trace2">Trace 2 : Implantation physique sur plan (Baies de brassage)</h3>
                 <p><strong>Description :</strong> Plan architectural du bâtiment annoté avec l'emplacement stratégique des sous-répartiteurs et le tracé des rocades (cuivre et fibre optique).</p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
                     <img src="752-1075-max.png" alt="Plan d'implantation des baies de brassage" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">

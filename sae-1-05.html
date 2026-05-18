@@ -49,7 +49,7 @@
             <ul>
                 <li><strong>Requêtage HTTP :</strong> Utilisation de la bibliothèque <code>requests</code> en Python pour envoyer des requêtes GET à l'API OpenStreetMap et récupérer les données brutes.</li>
                 <li><strong>Traitement mathématique :</strong> Création de fonctions pour convertir des coordonnées GPS (latitude/longitude) en coordonnées de "tuiles" cartographiques (X/Y) via des formules trigonométriques.</li>
-                <li><strong>Génération visuelle :</strong> Utilisation de la bibliothèque <code>PIL</code> (Pillow) pour télécharger l'image de la carte depuis le serveur et dessiner dynamiquement un repère (point rouge) aux coordonnées calculées.</li>
+                <li><strong>Génération visuelle :</strong> Utilisation de la bibliothèque <code>PIL</code> (Pillow) pour télécharger l'image de la carte depuis le serveur et dessiner dynamiquement un repère (point rouge) aux coordonnées calculées <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>.</li>
                 <li><strong>Exportation :</strong> Automatisation de la création d'un document récapitulatif en Markdown (.md).</li>
             </ul>
         </section>
@@ -57,7 +57,7 @@
         <section>
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
-                <h3>Trace 1 : Script Python de traitement géographique (API OSM)</h3>
+                <h3 id="trace1">Trace 1 : Script Python de traitement géographique (API OSM)</h3>
                 <p><strong>Description :</strong> Extrait de mon code Python montrant les fonctions de conversion mathématique et de génération d'image à partir des données de l'API.</p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
                     <img src="ficheosm.png" alt="Extrait du script Python utilisant l'API OpenStreetMap" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
