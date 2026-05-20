@@ -137,3 +137,33 @@ footer { text-align: center; padding: 2rem; background-color: #1a202c; color: #a
     h1 { font-size: 2rem; }
     .profile-pic { width: 220px; height: 220px; }
 }
+
+/* Effet de zoom fluide sur les traces de réalisation */
+.trace-image-container {
+    overflow: hidden; /* Empêche l'image de dépasser du cadre en zoomant */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.trace-image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0; /* Géré par le conteneur parent */
+    transition: transform 0.3s ease; /* Rend le zoom fluide */
+    cursor: zoom-in; /* Change le curseur pour indiquer que c'est interactif */
+}
+
+/* Au survol du conteneur, l'image à l'intérieur zoome légèrement */
+.trace-image-container:hover img {
+    transform: scale(1.03); /* Zoom léger de 3% */
+}
+
+/* Augmente légèrement l'ombre au survol pour donner du relief */
+.trace-image-container:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+}
