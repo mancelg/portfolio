@@ -29,7 +29,7 @@
             <h2>1. Contexte et Objectifs de la mission</h2>
             <div class="content-block">
                 <p><strong>Contexte professionnel :</strong> Ce projet en groupe de 4 étudiants simulait une réponse à un appel d'offres pour la refonte complète de l'infrastructure réseau du bâtiment C de l'IUT Grand Ouest Normandie (site d'Ifs).</p>
-                <p><strong>Mission confiée :</strong> À partir d'un cahier des charges détaillé et de plans architecturaux, nous devions concevoir l'architecture physique et logique du nouveau réseau. Cela incluait le plan d'adressage IP, le choix du matériel (commutateurs, jarretières, rocades), la simulation sur Packet Tracer, et la rédaction d'un devis estimatif.</p>
+                <p><strong>Mission confiée :</strong> À partir d'un cahier des charges détaillé et de plans architecturaux, nous devions concevoir l'architecture physique et logique du nouveau réseau. Cela incluait le plan d'adressage IP, le choix du matériel (commutateurs/switchs pour relier les appareils, jarretières ou câbles courts pour le brassage, rocades ou liaisons principales entre les répartiteurs), la simulation logicielle sur Packet Tracer, et la rédaction d'un devis estimatif.</p>
                 <p><strong>Compétences BUT ciblées :</strong> RT1 - Administrer les réseaux et l'Internet (Coefficient 31).</p>
             </div>
         </section>
@@ -38,8 +38,8 @@
             <h2>2. Apprentissages Critiques (AC) mobilisés</h2>
             <p>Au cours de ce projet d'infrastructure, j'ai particulièrement mis en œuvre les apprentissages suivants :</p>
             <ul>
-                <li><strong>AC 11.02 : Comprendre l’architecture et les fondements des systèmes numériques.</strong> <br><em>→ Comment je l'ai mobilisé : En réalisant un plan d'adressage IP optimisé (VLSM) pour diviser le réseau en sous-réseaux logiques fonctionnels (VLANs pour l'administration, les salles machines, le WiFi, etc.).</em></li>
-                <li><strong>AC 11.03 : Configurer les fonctions de base du réseau local.</strong> <br><em>→ Comment je l'ai mobilisé : En configurant les VLANs, les trunks (802.1Q) et les adresses IP sur les commutateurs Cisco virtuels dans l'environnement Packet Tracer.</em></li>
+                <li><strong>AC 11.02 : Comprendre l’architecture et les fondements des systèmes numériques.</strong> <br><em>→ Comment je l'ai mobilisé : En réalisant un plan d'adressage IP optimisé avec la méthode VLSM (Variable Length Subnet Mask, une technique de découpage évitant le gaspillage d'adresses) pour diviser le réseau en sous-réseaux logiques fonctionnels appelés VLANs (Virtual Local Area Networks, des réseaux virtuels isolant les flux comme l'administration ou le WiFi).</em></li>
+                <li><strong>AC 11.03 : Configurer les fonctions de base du réseau local.</strong> <br><em>→ Comment je l'ai mobilisé : En configurant les VLANs, les trunks 802.1Q (des liaisons permettant de faire transiter plusieurs VLANs sur un même câble) et les adresses IP sur les commutateurs Cisco virtuels.</em></li>
             </ul>
         </section>
 
@@ -47,10 +47,10 @@
             <h2>3. Tâches réalisées et Méthodologie</h2>
             <p>Le projet s'est déroulé en suivant plusieurs étapes précises :</p>
             <ul>
-                <li><strong>Analyse des besoins et étude des plans :</strong> Nous avons étudié le cahier des charges et les plans architecturaux du bâtiment pour choisir l'emplacement des baies de brassage et compter les prises nécessaires, ce qui a permis de valider notre plan d'implantation physique <strong>(<a href="#trace2" style="color: var(--primary-color); text-decoration: underline;">Trace 2</a>)</strong>.</li>
-                <li><strong>Conception logique :</strong> Nous avons calculé le plan d'adressage IP avec la méthode VLSM pour diviser correctement nos sous-réseaux et organiser nos différents VLANs.</li>
-                <li><strong>Simulation du réseau :</strong> Nous avons déployé et configuré virtuellement toute notre topologie sur le logiciel Cisco Packet Tracer pour vérifier que la communication fonctionnait bien entre tous les équipements, comme le montre notre schéma logique <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>.</li>
-                <li><strong>Choix technologiques :</strong> Nous avons sélectionné le matériel actif (commutateurs Cisco Catalyst) et passif adapté à nos besoins, puis nous avons établi le devis budgétaire final.</li>
+                <li><strong>Analyse des besoins et étude des plans :</strong> Nous avons étudié le cahier des charges et les plans architecturaux du bâtiment pour choisir l'emplacement des baies de brassage (armoires techniques regroupant les connexions) et compter les prises nécessaires, validant ainsi notre plan d'implantation physique <strong>(<a href="#trace2" style="color: var(--primary-color); text-decoration: underline;">Trace 2</a>)</strong>.</li>
+                <li><strong>Conception logique :</strong> Nous avons calculé le plan d'adressage IP pour diviser correctement nos sous-réseaux et organiser le routage entre nos différents VLANs.</li>
+                <li><strong>Simulation du réseau :</strong> Nous avons déployé et configuré virtuellement toute notre topologie sur le logiciel Cisco Packet Tracer (un simulateur réseau de référence) pour vérifier que la communication fonctionnait bien entre tous les équipements, comme le montre notre schéma logique <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>.</li>
+                <li><strong>Choix technologiques :</strong> Nous avons sélectionné le matériel actif (équipement nécessitant du courant, comme les switchs) et passif (câbles, prises) adapté à nos besoins pour établir le devis final.</li>
             </ul>
         </section>
 
@@ -58,24 +58,24 @@
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
                 <h3 id="trace1">Trace 1 : Architecture logique sous Cisco Packet Tracer</h3>
-                <p><strong>Description :</strong> Schéma topologique réalisé sur Packet Tracer montrant l'interconnexion des commutateurs (distribution et accès) avec la configuration des différents VLANs. <em>(Cliquez sur l'image pour l'ouvrir en grand)</em></p>
+                <p><strong>Description :</strong> Schéma topologique réalisé sur Packet Tracer montrant l'interconnexion des commutateurs (couches de distribution et d'accès) avec la configuration des différents VLANs. <em>(Cliquez sur l'image pour l'ouvrir en grand)</em></p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
-                    <a href="2476-1693-max.png" target="_blank" class="trace-image-container" title="Ouvrir l'architecture logique en grand">
+                    <a href="2476-1693-max.png" target="_blank" class="trace-image-container" title="Ouvrir l'architecture logique en grand" style="max-width: 600px; width: 100%;">
                         <img src="2476-1693-max.png" alt="Topologie logique Packet Tracer">
                     </a>
                 </div>
-                <p><strong>Justification du choix :</strong> Cette trace prouve ma capacité à traduire un besoin théorique en une infrastructure réseau fonctionnelle (AC 11.03). Elle démontre la maîtrise des concepts de segmentation réseau (VLAN) et de liens agrégés (Trunk).</p>
+                <p><strong>Justification du choix :</strong> Cette trace prouve ma capacité à traduire un besoin théorique en une infrastructure réseau fonctionnelle (AC 11.03). Elle démontre la maîtrise des concepts de segmentation réseau (VLAN) et d'agrégation de liens (Trunk).</p>
                 
                 <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
 
                 <h3 id="trace2">Trace 2 : Implantation physique sur plan (Baies de brassage)</h3>
                 <p><strong>Description :</strong> Plan architectural du bâtiment annoté avec l'emplacement stratégique des sous-répartiteurs et le tracé des rocades (cuivre et fibre optique). <em>(Cliquez sur l'image pour l'ouvrir en grand)</em></p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-                    <a href="752-1075-max.png" target="_blank" class="trace-image-container" title="Ouvrir le plan d'implantation en grand">
+                    <a href="752-1075-max.png" target="_blank" class="trace-image-container" title="Ouvrir le plan d'implantation en grand" style="max-width: 600px; width: 100%;">
                         <img src="752-1075-max.png" alt="Plan d'implantation des baies de brassage">
                     </a>
                 </div>
-                <p><strong>Justification du choix :</strong> J'ai choisi cette image car elle illustre la dimension matérielle et physique du métier d'administrateur réseau. Elle prouve ma capacité à concevoir un câblage structuré en respectant les contraintes de distance (100m max pour le cuivre) et d'organisation spatiale d'un bâtiment.</p>
+                <p><strong>Justification du choix :</strong> J'ai choisi cette image car elle illustre la dimension matérielle et physique du métier d'administrateur réseau. Elle prouve ma capacité à concevoir un câblage structuré en respectant les normes et contraintes d'atténuation (100 mètres maximum pour le câble cuivre) au sein d'un bâtiment.</p>
             </div>
         </section>
 
@@ -83,13 +83,13 @@
             <h2>5. Autoévaluation et Démarche Réflexive</h2>
             <div class="content-block">
                 <h3>Difficultés rencontrées & Solutions apportées</h3>
-                <p>La principale difficulté de ce projet a été la réalisation du plan d'adressage VLSM (Variable Length Subnet Mask). Au départ, notre découpage entraînait un gaspillage d'adresses IP sur certains sous-réseaux. Pour résoudre ce problème, j'ai repris les calculs binaires avec mon groupe en commençant par les VLANs nécessitant le plus grand nombre d'hôtes pour optimiser la plage d'adresses globale.</p>
+                <p>La principale difficulté de ce projet a été la réalisation du plan d'adressage avec des masques de sous-réseaux de longueur variable (VLSM). Au départ, notre découpage logique entraînait un gaspillage d'adresses IP. Pour résoudre ce problème, j'ai repris les calculs binaires avec mon groupe en changeant notre méthodologie : nous avons commencé par traiter les VLANs nécessitant le plus grand nombre d'hôtes (ordinateurs), ce qui a permis d'optimiser l'emboîtement de la plage d'adresses globale.</p>
                 
                 <h3>Prise de recul (Bilan)</h3>
-                <p>Cette SAÉ m'a permis de comprendre qu'un réseau informatique performant ne se résume pas à la configuration de routeurs. La phase d'ingénierie préliminaire (analyse des plans, choix des fibres multimodes/monomodes pour les rocades, chiffrage budgétaire) est tout aussi cruciale. J'ai également apprécié l'utilisation de Packet Tracer pour valider nos hypothèses théoriques par la simulation.</p>
+                <p>Cette SAÉ m'a permis de comprendre qu'un réseau informatique performant ne se résume pas à taper des commandes dans un routeur. La phase d'ingénierie préliminaire (analyse des plans, choix entre fibres multimodes ou monomodes pour les distances de rocades, chiffrage budgétaire) est tout aussi cruciale. L'utilisation du simulateur a permis de valider nos hypothèses sans risque matériel.</p>
                 
                 <h3>Capacité d'adaptation</h3>
-                <p>La méthodologie appliquée ici (analyse des besoins, adressage, simulation, déploiement) est la base de tout projet d'infrastructure. Que ce soit pour une PME ou un campus universitaire complet, je suis désormais capable de structurer un réseau local de A à Z. Dans la perspective de mon parcours en Cybersécurité, avoir conçu cette architecture me permet de mieux comprendre comment un attaquant pourrait l'infiltrer (par exemple via des sauts de VLAN) et comment la protéger.</p>
+                <p>La méthodologie appliquée ici (analyse des besoins, adressage logique, simulation, déploiement physique) est la norme de l'industrie. Que ce soit pour une petite PME ou un campus universitaire complet, je suis désormais capable de structurer un réseau local. Dans la perspective de mon parcours en Cybersécurité, maîtriser cette architecture de base est fondamental : cela me permet de comprendre comment un attaquant pourrait l'infiltrer (par exemple via des techniques de "VLAN Hopping") et surtout comment configurer les équipements pour la protéger.</p>
             </div>
         </section>
     </main>

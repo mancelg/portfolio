@@ -28,8 +28,8 @@
         <section>
             <h2>1. Contexte et Objectifs de la mission</h2>
             <div class="content-block">
-                <p><strong>Contexte professionnel :</strong> Un professionnel R&T est régulièrement amené à manipuler des données brutes issues du système d'information (logs, état des équipements). Ces traitements, souvent récurrents, gagnent à être automatisés via des scripts.</p>
-                <p><strong>Mission confiée :</strong> L'objectif de ce projet de développement en Python était de récolter des données géographiques via une API REST en ligne (OpenStreetMap), de les traiter (conversion, parsing JSON), d'en extraire des informations utiles, puis de générer automatiquement un rapport au format Markdown (converti en HTML).</p>
+                <p><strong>Contexte professionnel :</strong> Un professionnel R&T est régulièrement amené à manipuler des données brutes issues du système d'information (comme des logs, c'est-à-dire les journaux d'événements enregistrant l'activité des serveurs). Ces traitements, souvent récurrents et chronophages, gagnent à être automatisés via des scripts.</p>
+                <p><strong>Mission confiée :</strong> L'objectif de ce projet de développement en Python était de récolter des données géographiques via une API REST en ligne (une Interface de Programmation permettant à des applications de s'échanger des données via le Web). Il fallait ensuite les traiter par <em>parsing</em> (analyse syntaxique du format JSON, un format de texte léger et hiérarchisé), en extraire les informations utiles, puis générer automatiquement un rapport visuel formaté en Markdown (langage de balisage léger) converti en HTML.</p>
                 <p><strong>Compétences BUT ciblées :</strong> RT3 - Créer des outils et des applications informatiques pour les R&T.</p>
             </div>
         </section>
@@ -38,33 +38,44 @@
             <h2>2. Apprentissages Critiques (AC) mobilisés</h2>
             <p>Au cours de ce projet de programmation, j'ai particulièrement mis en œuvre les apprentissages suivants :</p>
             <ul>
-                <li><strong>AC 13.02 : Lire, exécuter, corriger et modifier un programme.</strong> <br><em>→ Comment je l'ai mobilisé : En écrivant des fonctions Python complexes pour interroger des serveurs distants, en gérant les erreurs de connexion (blocs try/except) et en manipulant des images.</em></li>
-                <li><strong>AC 13.05 : Choisir les mécanismes de gestion de données adaptés au développement de l’outil.</strong> <br><em>→ Comment je l'ai mobilisé : En comprenant et en exploitant le format de données JSON retourné par l'API, qui est beaucoup plus structuré et manipulable informatiquement qu'un texte brut.</em></li>
+                <li><strong>AC 13.02 : Lire, exécuter, corriger et modifier un programme.</strong> <br><em>→ Comment je l'ai mobilisé : En écrivant des fonctions Python complexes pour interroger des serveurs distants, en gérant les erreurs de connexion réseau et en manipulant dynamiquement des images.</em></li>
+                <li><strong>AC 13.05 : Choisir les mécanismes de gestion de données adaptés au développement de l’outil.</strong> <br><em>→ Comment je l'ai mobilisé : En comprenant et en exploitant l'arborescence de données JSON retournée par l'API, un format beaucoup plus structuré et facile à manipuler informatiquement qu'un texte brut.</em></li>
             </ul>
         </section>
 
         <section>
             <h2>3. Tâches réalisées et Méthodologie</h2>
-            <p>Le développement s'est déroulé en plusieurs phases logiques :</p>
+            <p>Pour mener à bien ce projet d'automatisation, j'ai adopté une démarche de développement modulaire en découpant mon script Python en plusieurs fonctions distinctes. Le processus s'est articulé autour de quatre grandes phases :</p>
             <ul>
-                <li><strong>Requêtage HTTP :</strong> Utilisation de la bibliothèque <code>requests</code> en Python pour envoyer des requêtes GET à l'API OpenStreetMap et récupérer les données brutes.</li>
-                <li><strong>Traitement mathématique :</strong> Création de fonctions pour convertir des coordonnées GPS (latitude/longitude) en coordonnées de "tuiles" cartographiques (X/Y) via des formules trigonométriques.</li>
-                <li><strong>Génération visuelle :</strong> Utilisation de la bibliothèque <code>PIL</code> (Pillow) pour télécharger l'image de la carte depuis le serveur et dessiner dynamiquement un repère (point rouge) aux coordonnées calculées <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>.</li>
-                <li><strong>Exportation :</strong> Automatisation de la création d'un document récapitulatif en Markdown (.md).</li>
+                <li><strong>Phase 1 - Collecte des données :</strong> J'ai utilisé la bibliothèque <code>requests</code> pour lancer une requête GET (méthode standard pour demander une donnée à un serveur) vers l'API publique d'OpenStreetMap. J'ai intégré une gestion des erreurs (vérification du code HTTP 200) pour garantir que le script ne plante pas si le serveur distant est indisponible.</li>
+                <li><strong>Phase 2 - Parsing et Extraction (Manipulation du JSON) :</strong> L'API renvoyant un flux brut d'informations, j'ai développé des routines pour naviguer dans l'arborescence du fichier JSON. En Python, cela se traduit par la manipulation de listes et de dictionnaires (des structures de données associant des clés à des valeurs). Mon code extrait ainsi les coordonnées GPS et les tags pertinents (nom, cuisine, horaires).</li>
+                <li><strong>Phase 3 - Traitement Mathématique et Génération Visuelle :</strong> C'est la phase la plus technique <strong>(<a href="#trace1" style="color: var(--primary-color); text-decoration: underline;">Trace 1</a>)</strong>. J'ai programmé des formules trigonométriques complexes pour convertir les coordonnées GPS (latitude/longitude) vers des coordonnées de "tuiles X/Y" (les petites images carrées qui composent une carte numérique). La bibliothèque d'images <code>PIL</code> (Pillow) télécharge ensuite la tuile, calcule la position en pixels, et dessine un repère rouge sur le bâtiment.</li>
+                <li><strong>Phase 4 - Automatisation du Reporting :</strong> La dernière étape formatte ces données pour un utilisateur non-technique <strong>(<a href="#trace2" style="color: var(--primary-color); text-decoration: underline;">Trace 2</a>)</strong>. J'ai utilisé la concaténation de variables en Python pour générer un fichier Markdown intégrant le texte et l'image de la carte, qui est ensuite automatiquement converti en page web HTML.</li>
             </ul>
         </section>
 
         <section>
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
-                <h3 id="trace1">Trace 1 : Script Python de traitement géographique (API OSM)</h3>
+                <h3 id="trace1">Trace 1 : Script Python de traitement géographique (Génération visuelle)</h3>
                 <p><strong>Description :</strong> Extrait de mon code Python montrant les fonctions de conversion mathématique et de génération d'image à partir des données de l'API. <em>(Cliquez sur l'image pour l'ouvrir en grand)</em></p>
                 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
-                    <a href="ficheosm.png" target="_blank" class="trace-image-container" title="Ouvrir le script Python en grand">
+                    <a href="ficheosm.png" target="_blank" class="trace-image-container" title="Ouvrir le script Python en grand" style="max-width: 800px; display: inline-block;">
                         <img src="ficheosm.png" alt="Extrait du script Python utilisant l'API OpenStreetMap">
                     </a>
                 </div>
-                <p><strong>Justification du choix :</strong> J'ai choisi cet extrait de code car il illustre parfaitement ma capacité à faire communiquer mon script avec une application tierce (requête HTTP GET). On y voit également ma gestion des codes statuts HTTP (<code>if response.status_code == 200:</code>) et ma maîtrise des bibliothèques externes (<code>PIL</code>, <code>requests</code>, <code>math</code>).</p>
+                <p><strong>Justification du choix :</strong> J'ai choisi cet extrait car il illustre ma capacité à faire communiquer mon script avec une application tierce. On y voit ma gestion des codes statuts réseau (<code>response.status_code == 200</code>) et ma maîtrise de l'importation de bibliothèques logicielles spécialisées (<code>PIL</code>, <code>requests</code>, <code>math</code>).</p>
+                
+                <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
+
+                <h3 id="trace2">Trace 2 : Rapport final généré automatiquement (Fiche établissement)</h3>
+                <p><strong>Description :</strong> Capture d'écran du fichier HTML de sortie généré dynamiquement par mon script Python. Il présente les métadonnées d'un établissement restaurateur et la carte générée. <em>(Cliquez sur l'image pour l'ouvrir en grand)</em></p>
+                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                    <a href="image_osm.png" target="_blank" class="trace-image-container" title="Ouvrir le rapport généré en grand" style="max-width: 800px; display: inline-block;">
+                        <img src="image_osm.png" alt="Rapport HTML généré affichant les données et la carte OSM">
+                    </a>
+                </div>
+                <p><strong>Justification du choix :</strong> Cette trace démontre concrètement l'acquisition de l'AC 13.05. Une API renvoie des blocs de données brutes illisibles pour un humain. Mon script a identifié les clés spécifiques du dictionnaire JSON (comme <code>amenity</code> ou <code>opening_hours</code>), les a extraites, puis les a restructurées dans une interface web (le passage du Backend vers le Frontend). Cette preuve valide ma capacité d'automatisation.</p>
             </div>
         </section>
 
@@ -72,13 +83,14 @@
             <h2>5. Autoévaluation et Démarche Réflexive</h2>
             <div class="content-block">
                 <h3>Difficultés rencontrées & Solutions apportées</h3>
-                <p>L'une des principales difficultés a été la conversion des coordonnées GPS en pixels précis sur l'image téléchargée. Les mathématiques derrière la projection de Mercator utilisée par OpenStreetMap n'étaient pas triviales. Pour surmonter cela, j'ai procédé par itération : j'ai d'abord testé mon code avec des coordonnées connues très simples avant d'appliquer la formule <code>math.asinh(math.tan(lat_rad))</code>, et j'ai encapsulé le téléchargement dans un bloc <code>try/except</code> pour éviter que le programme ne plante si le serveur ne répondait pas.</p>
+                <p>J'ai rencontré deux grandes difficultés techniques lors de la phase d'analyse de données (parsing). Tout d'abord, lors de mes premiers tests, le serveur OpenStreetMap me bloquait l'accès avec une erreur HTTP 403 (Forbidden/Interdit). Après quelques recherches, j'ai compris que l'API rejetait les requêtes des programmes non identifiés. J'ai résolu ce problème en configurant un en-tête d'identification <code>headers = {'User-Agent': 'Projet/1.0'}</code> dans ma requête Python pour me déclarer proprement auprès du serveur, comme visible sur la Trace 1.</p>
+                <p>Ensuite, mon programme s'arrêtait brutalement avec une exception fatale de type <code>KeyError</code> (erreur survenant lorsqu'un programme cherche une clé inexistante). Cela arrivait car tous les bâtiments de la carte n'ont pas forcément les mêmes données renseignées. Pour rendre mon code plus "robuste" et éviter les crashs, j'ai modifié ma façon de lire le dictionnaire JSON : au lieu d'appeler directement la clé de manière rigide, j'ai utilisé la méthode d'interrogation sécurisée <code>.get('phone', 'Non renseigné')</code>. Ainsi, si l'information est absente, le script gère l'anomalie en affichant simplement une valeur par défaut.</p>
                 
                 <h3>Prise de recul (Bilan)</h3>
-                <p>Cette SAÉ m'a fait faire un bond en avant dans ma compréhension de l'architecture du Web. Avant, je voyais le code comme un outil fonctionnant en vase clos. Désormais, j'ai compris comment les API REST permettent à différents systèmes de se parler de manière universelle grâce au format JSON. C'est une compétence d'automatisation extrêmement puissante.</p>
+                <p>Cette SAÉ m'a fait faire un bond en avant dans ma compréhension de l'architecture logicielle du Web. Avant, je voyais le code comme un outil fonctionnant de manière isolée sur un ordinateur. Désormais, j'ai compris comment les API REST permettent à des systèmes hébergés dans le monde entier de se parler de manière universelle grâce au format JSON.</p>
                 
                 <h3>Capacité d'adaptation</h3>
-                <p>Comprendre les API REST et le JSON est une base absolue pour mon futur en cybersécurité ou en administration réseau. Par exemple, je pourrai réutiliser ces exactes mêmes compétences en Python pour interroger automatiquement l'API d'un pare-feu Cisco (via RESTCONF) pour vérifier ses règles de sécurité, ou pour scripter des requêtes automatisées vers l'API de Shodan lors d'une recherche de vulnérabilités (OSINT).</p>
+                <p>Comprendre l'interrogation d'API et le traitement de données (JSON parsing) est une base absolue pour mon futur en cybersécurité. Par exemple, je pourrai réutiliser cette même logique en Python pour scripter des requêtes automatisées vers des moteurs de recherche de vulnérabilités (comme Shodan) lors d'une phase de collecte d'informations sur des cibles publiques (OSINT - Open Source Intelligence). Je pourrai également utiliser ces compétences pour interroger l'API d'un pare-feu Cisco (via le protocole RESTCONF) afin d'en extraire et d'en auditer automatiquement les règles de sécurité.</p>
             </div>
         </section>
     </main>
