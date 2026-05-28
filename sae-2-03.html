@@ -23,37 +23,58 @@
     <main>
         <a href="projets.html" class="btn-back">Retour aux projets</a>
         
-        <h1>SAÉ 2.03 – Mettre en place une solution informatique…</h1>
+        <h1>SAÉ 2.03 – Sécurisation et optimisation de la gestion de tickets</h1>
         
         <section>
             <h2>1. Contexte et Objectifs de la mission</h2>
             <div class="content-block">
-                <p><strong>Contexte professionnel :</strong> [Ex: Travail en équipe]</p>
-                <p><strong>Mission confiée :</strong> [Ce que je devais produire ou résoudre techniquement]</p>
-                <p><strong>Compétences BUT ciblées :</strong> [Ex: RT1 (Administrer les réseaux)]</p>
+                <p><strong>Contexte professionnel :</strong> En tant que futur technicien R&T, je dois être capable de maintenir une application de gestion de parc informatique en assurant sa robustesse et la confidentialité des données des utilisateurs.</p>
+                <p><strong>Mission confiée :</strong> Après une version initiale, ma mission était de transformer l'application V1 en une solution sécurisée (V2). Cela impliquait la sécurisation de la base de données, l'amélioration de la collecte d'informations utilisateurs, la sécurisation du suivi des tickets par UID et une refonte structurelle du code.</p>
+                <p><strong>Compétences BUT ciblées :</strong> RT3 - Créer des outils et des applications informatiques pour les R&T.</p>
             </div>
         </section>
 
         <section>
             <h2>2. Apprentissages Critiques (AC) mobilisés</h2>
-            <p>Au cours de ce projet, j'ai particulièrement mis en œuvre les apprentissages suivants :</p>
+            <p>Ce projet couvre des aspects essentiels du développement web sécurisé :</p>
             <ul>
-                <li><strong>AC [Numéro] :</strong> [Intitulé de l'AC]. <br><em>→ Comment je l'ai mobilisé : .</em></li>
-                <li><strong>AC [Numéro] :</strong> [Intitulé de l'AC]. <br><em>→ Comment je l'ai mobilisé : .</em></li>
+                <li><strong>AC 13.05 : Choisir les mécanismes de gestion de données adaptés.</strong> <br><em>→ Comment je l'ai mobilisé : En modifiant le schéma SQL pour gérer des données optionnelles (mot de passe NULL) et assurer l'unicité des accès via des UID.</em></li>
+                <li><strong>AC 24.01 : Connaître et utiliser les bonnes pratiques de cybersécurité.</strong> <br><em>→ Comment je l'ai mobilisé : En implémentant une double vérification (UID + Email) pour protéger la confidentialité des tickets contre les tentatives de devinette d'ID numériques.</em></li>
             </ul>
         </section>
 
         <section>
             <h2>3. Tâches réalisées et Méthodologie</h2>
-            <p>[Détaille ici ta contribution personnelle. Quelles étapes as-tu suivies de A à Z ?]</p>
+            <p>Le développement de la version sécurisée s'est articulé autour de 5 étapes clés :</p>
+            <ul>
+                <li><strong>Sécurisation de la BDD :</strong> Modification de la structure SQL pour accepter les mots de passe NULL et ajout d'une colonne <code>uid_ticket</code> unique (clé alphanumérique de 10 caractères) pour remplacer les IDs numériques prévisibles.</li>
+                <li><strong>Collecte des données :</strong> Intégration de champs Nom et Prénom dans le formulaire pour améliorer la qualité du suivi administratif.</li>
+                <li><strong>Logique métier sécurisée :</strong> Création de fonctions internes (<code>generateTicketUid</code>, <code>isTicketUidUnique</code>) et utilisation d'une boucle <code>do-while</code> pour garantir la génération automatique d'un identifiant de ticket unique.</li>
+                <li><strong>Sécurisation de l'accès :</strong> Mise à jour de <code>track_ticket.php</code> avec une authentification par double facteur (UID + Email) pour restreindre l'accès au propriétaire du ticket.</li>
+                <li><strong>Standardisation du code :</strong> Remplacement systématique des <code>include_once</code> par des <code>require_once</code> sur tous les fichiers critiques (config, fonctions) afin d'assurer l'arrêt du script en cas d'absence d'un fichier essentiel.</li>
+            </ul>
         </section>
 
         <section>
             <h2>4. Preuves et Traces de réalisation</h2>
             <div class="content-block">
-                <h3>Trace 1 : [Nom de ta trace]</h3>
-                <p><strong>Description :</strong> [image du schéma, une capture d'écran, un bout de code ou un lien vers ton rapport].</p>
-                <p><strong>Justification du choix :</strong> J'ai choisi cette trace car .</p>
+                <h3>Trace 1 : Interface utilisateur de suivi sécurisé</h3>
+                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                    <a href="preuve-gestion-de-tickets1.png" target="_blank" title="Interface de suivi" style="max-width: 600px; display: inline-block;">
+                        <img src="preuve-gestion-de-tickets1.png" alt="Interface de suivi de ticket sécurisée">
+                    </a>
+                </div>
+                <p><strong>Justification du choix :</strong> Cette trace confirme l'implémentation de la sécurité par UID et Email. Elle prouve que l'utilisateur est forcé de fournir des identifiants non-prévisibles pour accéder à ses données.</p>
+                
+                <hr style="border: 0; height: 1px; background: #ddd; margin: 2rem 0;">
+
+                <h3 id="trace2">Trace 2 : Tableau de bord administrateur (V2)</h3>
+                <div style="text-align: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                    <a href="preuve-gestion-de-tickets2.png" target="_blank" title="Dashboard Admin" style="display: block; margin: 0 auto; max-width: 800px;">
+                        <img src="preuve-gestion-de-tickets2.png" alt="Dashboard administrateur montrant les UID" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <p><strong>Justification du choix :</strong> Cette capture démontre la gestion efficace des tickets avec l'UID affiché clairement, permettant un suivi sécurisé par l'administrateur.</p>
             </div>
         </section>
 
@@ -61,13 +82,13 @@
             <h2>5. Autoévaluation et Démarche Réflexive</h2>
             <div class="content-block">
                 <h3>Difficultés rencontrées & Solutions apportées</h3>
-                <p></p>
+                <p>La principale difficulté a été de garantir l'unicité des UID générés automatiquement sans risquer de collision. J'ai résolu ce problème en combinant une boucle <code>do-while</code> avec une fonction de vérification SQL immédiate, assurant ainsi qu'aucun identifiant en doublon ne puisse être enregistré.</p>
                 
                 <h3>Prise de recul (Bilan)</h3>
-                <p></p>
+                <p>Ce projet m'a fait réaliser que la cybersécurité ne commence pas après le développement, mais dès la conception du modèle de données. L'utilisation d'IDs numériques simples était une faille de sécurité majeure que j'ai appris à corriger par des identifiants opaques.</p>
                 
                 <h3>Capacité d'adaptation</h3>
-                <p></p>
+                <p>Je suis désormais à l'aise avec la structure de données d'un système de gestion de tickets. Pour la suite (étape 5 du sujet), j'ai déjà réfléchi à l'implémentation d'une "Corbeille" via un booléen <code>is_deleted</code>, une technique que je réutiliserai pour toute gestion de cycle de vie de données dans mes futurs projets.</p>
             </div>
         </section>
     </main>
